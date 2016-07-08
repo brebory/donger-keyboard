@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D79092C1D26F969003D38AF /* dongers.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D79092B1D26F969003D38AF /* dongers.json */; };
+		4D8C8CEE1D2EA8C100A49489 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8C8CED1D2EA8C100A49489 /* ReactiveCocoa.framework */; };
+		4D8C8CF61D2EA91200A49489 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8C8CED1D2EA8C100A49489 /* ReactiveCocoa.framework */; };
+		4D8C8CFA1D2EA91F00A49489 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8C8CED1D2EA8C100A49489 /* ReactiveCocoa.framework */; };
+		4D8C8CFE1D2EAA8200A49489 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8C8CF01D2EA8F300A49489 /* Nimble.framework */; };
+		4D8C8CFF1D2EAA8200A49489 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8C8CF11D2EA8F300A49489 /* Quick.framework */; };
+		4D8C8D011D2EAAA300A49489 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8C8CF01D2EA8F300A49489 /* Nimble.framework */; };
+		4D8C8D021D2EAAA300A49489 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8C8CF11D2EA8F300A49489 /* Quick.framework */; };
+		4D8C8D041D2EE78700A49489 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8C8CF21D2EA8F300A49489 /* Result.framework */; };
+		4D8C8D051D2EE7AD00A49489 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8C8CF21D2EA8F300A49489 /* Result.framework */; };
+		4D8C8D061D2EE7B400A49489 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8C8CF21D2EA8F300A49489 /* Result.framework */; };
+		4D8C8D071D2EE7DF00A49489 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8C8CF01D2EA8F300A49489 /* Nimble.framework */; };
+		4D8C8D081D2EE7DF00A49489 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8C8CF11D2EA8F300A49489 /* Quick.framework */; };
 		4DB653FA1D1C840C0002F17F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB653F91D1C840C0002F17F /* AppDelegate.swift */; };
 		4DB653FC1D1C840C0002F17F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB653FB1D1C840C0002F17F /* ViewController.swift */; };
 		4DB653FF1D1C840C0002F17F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DB653FD1D1C840C0002F17F /* Main.storyboard */; };
@@ -96,6 +109,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4D79092B1D26F969003D38AF /* dongers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dongers.json; sourceTree = "<group>"; };
+		4D79093F1D2EA2A0003D38AF /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		4D8C8CED1D2EA8C100A49489 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		4D8C8CF01D2EA8F300A49489 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		4D8C8CF11D2EA8F300A49489 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		4D8C8CF21D2EA8F300A49489 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		4DB653F61D1C840C0002F17F /* DongerKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DongerKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB653F91D1C840C0002F17F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DB653FB1D1C840C0002F17F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +146,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DB654541D1C8A8A0002F17F /* DongerKit.framework in Frameworks */,
+				4D8C8CEE1D2EA8C100A49489 /* ReactiveCocoa.framework in Frameworks */,
+				4D8C8D061D2EE7B400A49489 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +155,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D8C8CFE1D2EAA8200A49489 /* Nimble.framework in Frameworks */,
+				4D8C8CFF1D2EAA8200A49489 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +164,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D8C8D011D2EAAA300A49489 /* Nimble.framework in Frameworks */,
+				4D8C8D021D2EAAA300A49489 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +174,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DB6545D1D1C8AA90002F17F /* DongerKit.framework in Frameworks */,
+				4D8C8CF61D2EA91200A49489 /* ReactiveCocoa.framework in Frameworks */,
+				4D8C8D041D2EE78700A49489 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +183,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D8C8CFA1D2EA91F00A49489 /* ReactiveCocoa.framework in Frameworks */,
+				4D8C8D051D2EE7AD00A49489 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,15 +193,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DB654491D1C8A8A0002F17F /* DongerKit.framework in Frameworks */,
+				4D8C8D071D2EE7DF00A49489 /* Nimble.framework in Frameworks */,
+				4D8C8D081D2EE7DF00A49489 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D79092A1D26F94A003D38AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4D79092B1D26F969003D38AF /* dongers.json */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4D8C8CEF1D2EA8CA00A49489 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D8C8CF01D2EA8F300A49489 /* Nimble.framework */,
+				4D8C8CF11D2EA8F300A49489 /* Quick.framework */,
+				4D8C8CF21D2EA8F300A49489 /* Result.framework */,
+				4D8C8CED1D2EA8C100A49489 /* ReactiveCocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4DB653ED1D1C840C0002F17F = {
 			isa = PBXGroup;
 			children = (
+				4D79093F1D2EA2A0003D38AF /* Cartfile */,
 				4DB653F81D1C840C0002F17F /* DongerKeyboard */,
 				4DB654101D1C840D0002F17F /* DongerKeyboardTests */,
 				4DB6541B1D1C840D0002F17F /* DongerKeyboardUITests */,
@@ -180,6 +231,7 @@
 				4DB654401D1C8A8A0002F17F /* DongerKit */,
 				4DB6544E1D1C8A8A0002F17F /* DongerKitTests */,
 				4DB653F71D1C840C0002F17F /* Products */,
+				4D8C8CEF1D2EA8CA00A49489 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -240,6 +292,7 @@
 		4DB654401D1C8A8A0002F17F /* DongerKit */ = {
 			isa = PBXGroup;
 			children = (
+				4D79092A1D26F94A003D38AF /* Supporting Files */,
 				4DB654411D1C8A8A0002F17F /* DongerKit.h */,
 				4DB654431D1C8A8A0002F17F /* Info.plist */,
 			);
@@ -278,6 +331,7 @@
 				4DB653F41D1C840C0002F17F /* Resources */,
 				4DB654391D1C88A00002F17F /* Embed App Extensions */,
 				4DB654591D1C8A8B0002F17F /* Embed Frameworks */,
+				4D8C8CFD1D2EA9BB00A49489 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -333,6 +387,7 @@
 				4DB6542A1D1C88A00002F17F /* Sources */,
 				4DB6542B1D1C88A00002F17F /* Frameworks */,
 				4DB6542C1D1C88A00002F17F /* Resources */,
+				4D8C8CFC1D2EA99600A49489 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -351,6 +406,7 @@
 				4DB6543B1D1C8A8A0002F17F /* Frameworks */,
 				4DB6543C1D1C8A8A0002F17F /* Headers */,
 				4DB6543D1D1C8A8A0002F17F /* Resources */,
+				4D8C8CFB1D2EA93B00A49489 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -475,6 +531,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D79092C1D26F969003D38AF /* dongers.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +543,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4D8C8CFB1D2EA93B00A49489 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		4D8C8CFC1D2EA99600A49489 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		4D8C8CFD1D2EA9BB00A49489 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4DB653F21D1C840C0002F17F /* Sources */ = {
@@ -683,6 +788,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DongerKeyboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.snackpackgames.apps.DongerKeyboard;
@@ -696,6 +805,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DongerKeyboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.snackpackgames.apps.DongerKeyboard;
@@ -707,6 +820,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DongerKeyboardTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.snackpackgames.apps.DongerKeyboardTests;
@@ -719,6 +836,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DongerKeyboardTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.snackpackgames.apps.DongerKeyboardTests;
@@ -730,6 +851,10 @@
 		4DB654281D1C840D0002F17F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DongerKeyboardUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.snackpackgames.apps.DongerKeyboardUITests;
@@ -741,6 +866,10 @@
 		4DB654291D1C840D0002F17F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DongerKeyboardUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.snackpackgames.apps.DongerKeyboardUITests;
@@ -753,6 +882,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Donger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.snackpackgames.apps.DongerKeyboard.Donger;
@@ -765,6 +898,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Donger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.snackpackgames.apps.DongerKeyboard.Donger;
@@ -782,6 +919,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DongerKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -802,6 +943,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DongerKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -816,6 +961,10 @@
 		4DB6545B1D1C8A8B0002F17F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DongerKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.snackpackgames.apps.DongerKitTests;
@@ -827,6 +976,10 @@
 		4DB6545C1D1C8A8B0002F17F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DongerKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.snackpackgames.apps.DongerKitTests;
@@ -854,6 +1007,7 @@
 				4DB654231D1C840D0002F17F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4DB654241D1C840D0002F17F /* Build configuration list for PBXNativeTarget "DongerKeyboardTests" */ = {
 			isa = XCConfigurationList;
@@ -862,6 +1016,7 @@
 				4DB654261D1C840D0002F17F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4DB654271D1C840D0002F17F /* Build configuration list for PBXNativeTarget "DongerKeyboardUITests" */ = {
 			isa = XCConfigurationList;
@@ -870,6 +1025,7 @@
 				4DB654291D1C840D0002F17F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4DB654361D1C88A00002F17F /* Build configuration list for PBXNativeTarget "Donger" */ = {
 			isa = XCConfigurationList;
@@ -878,6 +1034,7 @@
 				4DB654381D1C88A00002F17F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4DB654561D1C8A8B0002F17F /* Build configuration list for PBXNativeTarget "DongerKit" */ = {
 			isa = XCConfigurationList;
@@ -886,6 +1043,7 @@
 				4DB654581D1C8A8B0002F17F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4DB6545A1D1C8A8B0002F17F /* Build configuration list for PBXNativeTarget "DongerKitTests" */ = {
 			isa = XCConfigurationList;
@@ -894,6 +1052,7 @@
 				4DB6545C1D1C8A8B0002F17F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
