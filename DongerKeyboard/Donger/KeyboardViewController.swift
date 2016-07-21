@@ -22,18 +22,7 @@ class KeyboardViewController: UIInputViewController {
         super.viewDidLoad()
     
         // Perform custom UI setup here
-        self.nextKeyboardButton = UIButton(type: .System)
-    
-        self.nextKeyboardButton.setTitle(NSLocalizedString("Next Keyboard", comment: "Title for 'Next Keyboard' button"), forState: .Normal)
-        self.nextKeyboardButton.sizeToFit()
-        self.nextKeyboardButton.translatesAutoresizingMaskIntoConstraints = false
-    
-        self.nextKeyboardButton.addTarget(self, action: #selector(UIInputViewController.advanceToNextInputMode), forControlEvents: .TouchUpInside)
         
-        self.view.addSubview(self.nextKeyboardButton)
-    
-        self.nextKeyboardButton.leftAnchor.constraintEqualToAnchor(self.view.leftAnchor).active = true
-        self.nextKeyboardButton.bottomAnchor.constraintEqualToAnchor(self.view.bottomAnchor).active = true
     }
 
     override func didReceiveMemoryWarning() {

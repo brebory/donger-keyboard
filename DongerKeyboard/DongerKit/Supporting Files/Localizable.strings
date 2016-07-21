@@ -1,0 +1,8 @@
+/* 
+  Localizable.strings
+  DongerKeyboard
+
+  Created by Brendon Roberto on 7/21/16.
+  Copyright © 2016 Snackpack Games. All rights reserved.
+*/
+"STR_SERVICE_ERROR_HTTP_ERROR_MESSAGE" = "HTTP Error - Code: %@, Message: %@"
