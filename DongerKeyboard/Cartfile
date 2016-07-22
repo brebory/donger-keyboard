@@ -1,2 +1,4 @@
 github "ReactiveCocoa/ReactiveCocoa" ~> 4.2.1
 github "Alamofire/Alamofire" ~> 3.4
+github "robb/Cartography" ~> 0.6
+github "SwiftyJSON/SwiftyJSON" ~> 2.3

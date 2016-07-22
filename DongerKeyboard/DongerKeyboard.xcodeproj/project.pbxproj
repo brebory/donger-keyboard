@@ -26,10 +26,6 @@
 		4D8E3C801D416F5C00BD68DF /* Cartfile.private in Resources */ = {isa = PBXBuildFile; fileRef = 4D8E3C7D1D416F5C00BD68DF /* Cartfile.private */; };
 		4D8E3C811D416F5C00BD68DF /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 4D8E3C7E1D416F5C00BD68DF /* Cartfile.resolved */; };
 		4D8E3C821D416F5C00BD68DF /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 4D8E3C7E1D416F5C00BD68DF /* Cartfile.resolved */; };
-		4D8E3C861D416F8500BD68DF /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4D8E3C841D416F8500BD68DF /* LICENSE */; };
-		4D8E3C871D416F8500BD68DF /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4D8E3C841D416F8500BD68DF /* LICENSE */; };
-		4D8E3C881D416F8500BD68DF /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E3C851D416F8500BD68DF /* README.md */; };
-		4D8E3C891D416F8500BD68DF /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E3C851D416F8500BD68DF /* README.md */; };
 		4D8E3C8C1D4170C900BD68DF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8E3C8B1D4170C900BD68DF /* Alamofire.framework */; };
 		4D8E3C8D1D4170CA00BD68DF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8E3C8B1D4170C900BD68DF /* Alamofire.framework */; };
 		4D8E3C8E1D4170F300BD68DF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8E3C8B1D4170C900BD68DF /* Alamofire.framework */; };
@@ -45,6 +41,13 @@
 		4D8E3CA01D417ED000BD68DF /* DongerLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E3C9E1D417ED000BD68DF /* DongerLocalService.swift */; };
 		4D8E3CA21D417EFD00BD68DF /* DongerAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E3CA11D417EFD00BD68DF /* DongerAPIService.swift */; };
 		4D8E3CA31D417EFD00BD68DF /* DongerAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E3CA11D417EFD00BD68DF /* DongerAPIService.swift */; };
+		4D8E3CA61D427D2500BD68DF /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8E3CA41D427D2500BD68DF /* Cartography.framework */; };
+		4D8E3CA81D427D2500BD68DF /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8E3CA51D427D2500BD68DF /* SwiftyJSON.framework */; };
+		4D8E3CA91D427D2500BD68DF /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8E3CA51D427D2500BD68DF /* SwiftyJSON.framework */; };
+		4D8E3CAA1D427D4500BD68DF /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8E3CA41D427D2500BD68DF /* Cartography.framework */; };
+		4D8E3CAB1D427D5A00BD68DF /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8E3CA51D427D2500BD68DF /* SwiftyJSON.framework */; };
+		4D8E3CAC1D427D6000BD68DF /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8E3CA41D427D2500BD68DF /* Cartography.framework */; };
+		4D8E3CAE1D4292C300BD68DF /* SignalProducerMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E3CAD1D4292C300BD68DF /* SignalProducerMatchers.swift */; };
 		4DB653FA1D1C840C0002F17F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB653F91D1C840C0002F17F /* AppDelegate.swift */; };
 		4DB653FC1D1C840C0002F17F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB653FB1D1C840C0002F17F /* ViewController.swift */; };
 		4DB653FF1D1C840C0002F17F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DB653FD1D1C840C0002F17F /* Main.storyboard */; };
@@ -152,6 +155,9 @@
 		4D8E3C9B1D417C7600BD68DF /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		4D8E3C9E1D417ED000BD68DF /* DongerLocalService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DongerLocalService.swift; sourceTree = "<group>"; };
 		4D8E3CA11D417EFD00BD68DF /* DongerAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DongerAPIService.swift; sourceTree = "<group>"; };
+		4D8E3CA41D427D2500BD68DF /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
+		4D8E3CA51D427D2500BD68DF /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		4D8E3CAD1D4292C300BD68DF /* SignalProducerMatchers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProducerMatchers.swift; sourceTree = "<group>"; };
 		4DB653F61D1C840C0002F17F /* DongerKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DongerKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB653F91D1C840C0002F17F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DB653FB1D1C840C0002F17F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -183,9 +189,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D8E3C8E1D4170F300BD68DF /* Alamofire.framework in Frameworks */,
+				4D8E3CAC1D427D6000BD68DF /* Cartography.framework in Frameworks */,
 				4DB654541D1C8A8A0002F17F /* DongerKit.framework in Frameworks */,
 				4D8C8CEE1D2EA8C100A49489 /* ReactiveCocoa.framework in Frameworks */,
 				4D8C8D061D2EE7B400A49489 /* Result.framework in Frameworks */,
+				4D8E3CAB1D427D5A00BD68DF /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +219,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D8E3CAA1D427D4500BD68DF /* Cartography.framework in Frameworks */,
 				4DB6545D1D1C8AA90002F17F /* DongerKit.framework in Frameworks */,
 				4D8C8CF61D2EA91200A49489 /* ReactiveCocoa.framework in Frameworks */,
 				4D8C8D041D2EE78700A49489 /* Result.framework in Frameworks */,
@@ -221,9 +230,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D8C8CFA1D2EA91F00A49489 /* ReactiveCocoa.framework in Frameworks */,
 				4D8E3C8C1D4170C900BD68DF /* Alamofire.framework in Frameworks */,
+				4D8E3CA61D427D2500BD68DF /* Cartography.framework in Frameworks */,
+				4D8C8CFA1D2EA91F00A49489 /* ReactiveCocoa.framework in Frameworks */,
 				4D8C8D051D2EE7AD00A49489 /* Result.framework in Frameworks */,
+				4D8E3CA81D427D2500BD68DF /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,10 +242,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D8E3C8D1D4170CA00BD68DF /* Alamofire.framework in Frameworks */,
 				4DB654491D1C8A8A0002F17F /* DongerKit.framework in Frameworks */,
 				4D8C8D071D2EE7DF00A49489 /* Nimble.framework in Frameworks */,
 				4D8C8D081D2EE7DF00A49489 /* Quick.framework in Frameworks */,
-				4D8E3C8D1D4170CA00BD68DF /* Alamofire.framework in Frameworks */,
+				4D8E3CA91D427D2500BD68DF /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +266,8 @@
 		4D8C8CEF1D2EA8CA00A49489 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D8E3CA41D427D2500BD68DF /* Cartography.framework */,
+				4D8E3CA51D427D2500BD68DF /* SwiftyJSON.framework */,
 				4D8E3C8B1D4170C900BD68DF /* Alamofire.framework */,
 				4D8C8CF01D2EA8F300A49489 /* Nimble.framework */,
 				4D8C8CF11D2EA8F300A49489 /* Quick.framework */,
@@ -395,6 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				4DB6544F1D1C8A8A0002F17F /* DongerKitTests.swift */,
+				4D8E3CAD1D4292C300BD68DF /* SignalProducerMatchers.swift */,
 				4DB654511D1C8A8A0002F17F /* Info.plist */,
 			);
 			path = DongerKitTests;
@@ -626,7 +641,6 @@
 				4D8E3C9C1D417C7600BD68DF /* Localizable.strings in Resources */,
 				4D79092C1D26F969003D38AF /* dongers.json in Resources */,
 				4D8E3C811D416F5C00BD68DF /* Cartfile.resolved in Resources */,
-				4D8E3C861D416F8500BD68DF /* LICENSE in Resources */,
 				4D8E3C7F1D416F5C00BD68DF /* Cartfile.private in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -635,7 +649,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D8E3C871D416F8500BD68DF /* LICENSE in Resources */,
 				4D8E3C9D1D417C7600BD68DF /* Localizable.strings in Resources */,
 				4D8E3C801D416F5C00BD68DF /* Cartfile.private in Resources */,
 				4D8E3C821D416F5C00BD68DF /* Cartfile.resolved in Resources */,
@@ -654,6 +667,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 			);
 			outputPaths = (
 			);
@@ -669,6 +684,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
 			);
 			outputPaths = (
 			);
@@ -685,6 +701,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 			);
 			outputPaths = (
 			);
@@ -737,7 +755,6 @@
 				4D8E3C921D41772300BD68DF /* Donger.swift in Sources */,
 				4D8E3C9F1D417ED000BD68DF /* DongerLocalService.swift in Sources */,
 				4D8E3CA21D417EFD00BD68DF /* DongerAPIService.swift in Sources */,
-				4D8E3C881D416F8500BD68DF /* README.md in Sources */,
 				4D8E3C7B1D416E7900BD68DF /* DongerService.swift in Sources */,
 				4D8E3C951D41775D00BD68DF /* Category.swift in Sources */,
 			);
@@ -747,8 +764,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D8E3CAE1D4292C300BD68DF /* SignalProducerMatchers.swift in Sources */,
 				4D8E3C9A1D41793E00BD68DF /* ServiceError.swift in Sources */,
-				4D8E3C891D416F8500BD68DF /* README.md in Sources */,
 				4D8E3CA01D417ED000BD68DF /* DongerLocalService.swift in Sources */,
 				4D8E3CA31D417EFD00BD68DF /* DongerAPIService.swift in Sources */,
 				4D8E3C961D41775D00BD68DF /* Category.swift in Sources */,
@@ -1029,6 +1046,7 @@
 		4DB654571D1C8A8B0002F17F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1055,6 +1073,7 @@
 		4DB654581D1C8A8B0002F17F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;

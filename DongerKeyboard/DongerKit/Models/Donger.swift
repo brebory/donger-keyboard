@@ -10,5 +10,4 @@ import Foundation
 
 public struct Donger {
     var text: String
-    var category: Category
 }
