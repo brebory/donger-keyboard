@@ -22,9 +22,7 @@ class DongerKitSpec: QuickSpec {
 
         describe("DongerLocalService") {
             xit("should implement the getDongers method") {
-                //expect(DongerLocalService.getDongers()).toEventually
-                let producer = DongerLocalService.getDongers()
-                producer.on(failed: { error in  }, completed: { }, next: { next in }).start()
+                //expect(DongerLocalService.getDongers()).to(haveNext([]))
             }
         }
     }
