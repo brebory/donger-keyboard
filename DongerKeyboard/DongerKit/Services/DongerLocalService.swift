@@ -11,8 +11,15 @@ import ReactiveCocoa
 import Alamofire
 import SwiftyJSON
 
-public class DongerLocalService: DongerService {
+/** 
+ *  Implements the static DongerService protocol by retrieving dongers
+ *  from a flat file in the app bundle.
+ */
+ public class DongerLocalService: DongerService {
 
+    /**
+     *  Constants struct for static constants
+     */
     private struct Constants {
         static let FileName = "dongers"
         static let FileExtension = "json"
@@ -30,8 +37,22 @@ public class DongerLocalService: DongerService {
         }
     }
 
+    /**
+     *  Private reference to the default NSFileManager.
+     */
     private static let fileManager = NSFileManager.defaultManager()
 
+    /**
+     *  Retrieve the list of dongers from the flat file.
+     *
+     *  ### Example
+     *  ```swift
+     *  let dongerProducer = dongerService.getDongers()
+     *  let dongers = MutableProperty<[Donger]>([])
+     *  dongers <~ dongerProducer
+     *  ```
+     *
+     */
     public class func getDongers() -> SignalProducer<[Donger], ServiceError> {
         let producer = SignalProducer<[Donger], ServiceError>() { observer, disposable in
 

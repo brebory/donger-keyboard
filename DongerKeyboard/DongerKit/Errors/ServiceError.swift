@@ -19,7 +19,7 @@ public enum ServiceError: ErrorType, CustomStringConvertible {
             static let IOError = "STR_SERVICE_ERROR_IO_ERROR_MESSAGE"
         }
 
-        private struct ErrorCodes {
+        private struct Codes {
             static let JSONParse = 10001
         }
     }
@@ -52,7 +52,7 @@ public enum ServiceError: ErrorType, CustomStringConvertible {
         case .HTTPError(let code, _):
             return code
         case .JSONParseError:
-            return Constants.ErrorCodes.JSONParse
+            return Constants.Codes.JSONParse
         case .IOError(let code, _):
             return code
         }

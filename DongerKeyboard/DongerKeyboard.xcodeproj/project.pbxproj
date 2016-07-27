@@ -48,8 +48,11 @@
 		4D8E3CAB1D427D5A00BD68DF /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8E3CA51D427D2500BD68DF /* SwiftyJSON.framework */; };
 		4D8E3CAC1D427D6000BD68DF /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8E3CA41D427D2500BD68DF /* Cartography.framework */; };
 		4D8E3CAE1D4292C300BD68DF /* SignalProducerMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E3CAD1D4292C300BD68DF /* SignalProducerMatchers.swift */; };
+		4D8ED9A61D48FEDC00C552CA /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D8ED9A51D48FEDC00C552CA /* Test.storyboard */; };
+		4D8ED9A81D48FF8A00C552CA /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8ED9A71D48FF8A00C552CA /* TestViewController.swift */; };
+		4D8ED9AA1D49044900C552CA /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8ED9A91D49044900C552CA /* TestViewModel.swift */; };
+		4D8ED9AC1D49051600C552CA /* ApplicationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8ED9AB1D49051600C552CA /* ApplicationError.swift */; };
 		4DB653FA1D1C840C0002F17F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB653F91D1C840C0002F17F /* AppDelegate.swift */; };
-		4DB653FC1D1C840C0002F17F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB653FB1D1C840C0002F17F /* ViewController.swift */; };
 		4DB653FF1D1C840C0002F17F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DB653FD1D1C840C0002F17F /* Main.storyboard */; };
 		4DB654021D1C840C0002F17F /* DongerKeyboard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4DB654001D1C840C0002F17F /* DongerKeyboard.xcdatamodeld */; };
 		4DB654041D1C840C0002F17F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DB654031D1C840C0002F17F /* Assets.xcassets */; };
@@ -158,9 +161,12 @@
 		4D8E3CA41D427D2500BD68DF /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
 		4D8E3CA51D427D2500BD68DF /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		4D8E3CAD1D4292C300BD68DF /* SignalProducerMatchers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProducerMatchers.swift; sourceTree = "<group>"; };
+		4D8ED9A51D48FEDC00C552CA /* Test.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
+		4D8ED9A71D48FF8A00C552CA /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		4D8ED9A91D49044900C552CA /* TestViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
+		4D8ED9AB1D49051600C552CA /* ApplicationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationError.swift; sourceTree = "<group>"; };
 		4DB653F61D1C840C0002F17F /* DongerKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DongerKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB653F91D1C840C0002F17F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4DB653FB1D1C840C0002F17F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4DB653FE1D1C840C0002F17F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DB654011D1C840C0002F17F /* DongerKeyboard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DongerKeyboard.xcdatamodel; sourceTree = "<group>"; };
 		4DB654031D1C840C0002F17F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -319,8 +325,33 @@
 			isa = PBXGroup;
 			children = (
 				4D8E3C981D41793E00BD68DF /* ServiceError.swift */,
+				4D8ED9AB1D49051600C552CA /* ApplicationError.swift */,
 			);
 			path = Errors;
+			sourceTree = "<group>";
+		};
+		4D8E3CC31D47D9C800BD68DF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4D8ED9A71D48FF8A00C552CA /* TestViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4D8E3CC41D47D9D000BD68DF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4D8ED9A91D49044900C552CA /* TestViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4D8ED9A41D48FEC600C552CA /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4D8ED9A51D48FEDC00C552CA /* Test.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		4DB653ED1D1C840C0002F17F = {
@@ -355,8 +386,10 @@
 		4DB653F81D1C840C0002F17F /* DongerKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				4D8ED9A41D48FEC600C552CA /* Storyboards */,
+				4D8E3CC41D47D9D000BD68DF /* ViewModels */,
+				4D8E3CC31D47D9C800BD68DF /* Views */,
 				4DB653F91D1C840C0002F17F /* AppDelegate.swift */,
-				4DB653FB1D1C840C0002F17F /* ViewController.swift */,
 				4DB653FD1D1C840C0002F17F /* Main.storyboard */,
 				4DB654031D1C840C0002F17F /* Assets.xcassets */,
 				4DB654051D1C840C0002F17F /* LaunchScreen.storyboard */,
@@ -609,6 +642,7 @@
 			files = (
 				4DB654071D1C840C0002F17F /* LaunchScreen.storyboard in Resources */,
 				4DB654041D1C840C0002F17F /* Assets.xcassets in Resources */,
+				4D8ED9A61D48FEDC00C552CA /* Test.storyboard in Resources */,
 				4DB653FF1D1C840C0002F17F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -717,8 +751,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DB653FC1D1C840C0002F17F /* ViewController.swift in Sources */,
 				4DB653FA1D1C840C0002F17F /* AppDelegate.swift in Sources */,
+				4D8ED9A81D48FF8A00C552CA /* TestViewController.swift in Sources */,
+				4D8ED9AA1D49044900C552CA /* TestViewModel.swift in Sources */,
 				4DB654021D1C840C0002F17F /* DongerKeyboard.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -755,6 +790,7 @@
 				4D8E3C921D41772300BD68DF /* Donger.swift in Sources */,
 				4D8E3C9F1D417ED000BD68DF /* DongerLocalService.swift in Sources */,
 				4D8E3CA21D417EFD00BD68DF /* DongerAPIService.swift in Sources */,
+				4D8ED9AC1D49051600C552CA /* ApplicationError.swift in Sources */,
 				4D8E3C7B1D416E7900BD68DF /* DongerService.swift in Sources */,
 				4D8E3C951D41775D00BD68DF /* Category.swift in Sources */,
 			);
