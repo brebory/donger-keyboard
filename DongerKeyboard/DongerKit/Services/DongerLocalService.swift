@@ -21,8 +21,6 @@ import SwiftyJSON
      *  Constants struct for static constants
      */
     private struct Constants {
-        static let FileName = "dongers"
-        static let FileExtension = "json"
 
         private struct Errors {
             private struct Messages {
@@ -36,6 +34,8 @@ import SwiftyJSON
             }
         }
     }
+
+    var filename: String?
 
     /**
      *  Private reference to the default NSFileManager.
@@ -53,11 +53,11 @@ import SwiftyJSON
      *  ```
      *
      */
-    public class func getDongers() -> SignalProducer<[Donger], ServiceError> {
+    public func getDongers() -> SignalProducer<[Donger], ServiceError> {
         let producer = SignalProducer<[Donger], ServiceError>() { observer, disposable in
 
             // Fail if the main bundle can't find a path for the requested resource.
-            guard let filePath = NSBundle.mainBundle().pathForResource(Constants.FileName, ofType: Constants.FileExtension)
+            guard let filePath = NSBundle.mainBundle().pathForResource(self.filename ?? "", ofType: )
                 else { return observer.sendFailed(.IOError(code: Constants.Errors.Codes.FileNotFound,
                                                            message: Constants.Errors.Messages.FileNotFound)) }
 
@@ -82,7 +82,7 @@ import SwiftyJSON
         return producer
     }
 
-    public class func getCategories() -> SignalProducer<[Category], ServiceError> {
+    public func getCategories() -> SignalProducer<[Category], ServiceError> {
         let producer = SignalProducer<[Category], ServiceError> { observer, disposable in
 
             // Fail if the main bundle can't find a path for the requested resource.
@@ -110,7 +110,7 @@ import SwiftyJSON
         return producer
     }
 
-    public class func getDongersForCategory(category: Category) -> SignalProducer<[Donger], ServiceError> {
+    public func getDongersForCategory(category: Category) -> SignalProducer<[Donger], ServiceError> {
         let producer = SignalProducer<[Donger], ServiceError> { observer, disposable in
 
         }

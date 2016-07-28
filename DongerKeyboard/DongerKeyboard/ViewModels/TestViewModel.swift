@@ -11,11 +11,27 @@ import ReactiveCocoa
 import DongerKit
 
 class TestViewModel {
-    var service: DongerService?
+    private struct Constants {
+        private struct Errors {
+            private struct Messages {
+                static let ServiceInitialization = "STR_TESTVIEWMODEL_SERVICEINITIALIZATION_ERROR"
+            }
 
-    var producer: SignalProducer<[Donger], ServiceError> {
-        guard let service = self.service
-            else { throw 
+            private struct Codes {
+                static let ServiceInitialization = 11001
+            }
+        }
+    }
+
+    var service: DongerService?
+    var disposable: Disposable?
+
+    var signal: Signal<[Donger], ServiceError> {
+        //guard let service = self.service
+        //    else { return }
+
+        service!.type
+        //service?.type.getDongers().startWithSignal
     }
 
     init(service: DongerService) {

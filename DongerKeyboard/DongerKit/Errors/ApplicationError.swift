@@ -16,19 +16,23 @@ public enum ApplicationError: ErrorType, CustomStringConvertible {
         private struct Messages {
             static let Initialization = "STR_APPLICATION_ERROR_INIT_ERROR_MESSAGE"
         }
-
-        private struct Codes {
-            static let Initialization = 11001
-        }
     }
 
-    case InitializationError
+    case InitializationError(message: String, code: Int)
 
     public var description: String {
         switch self {
-        case .InitializationError:
-            let localizedString = NSLocalizedString(Constants.Messages.Initialization, comment: "Error initializing application.")
-            return localizedString
+        case .InitializationError(let message, _):
+            let localizedString = NSLocalizedString(Constants.Messages.Initialization,
+                                                    comment: "Error initializing application: <message>")
+            return String(format: localizedString, message)
+        }
+    }
+
+    public var code: Int {
+        switch self {
+        case .InitializationError(_, let code):
+            return code
         }
     }
 }

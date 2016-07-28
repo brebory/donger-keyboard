@@ -19,7 +19,9 @@ class TestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        dongers <~ DongerLocalService.getDongers()
+        DongerLocalService.getDongers().startWithSignal { [unowned self] signal, disposable in
+            guard let strongSelf = self else { return }
+        }
     }
 
     override func didReceiveMemoryWarning() {

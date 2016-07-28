@@ -10,7 +10,7 @@ import Foundation
 import ReactiveCocoa
 
 public protocol DongerService {
-    static func getDongers() -> SignalProducer<[Donger], ServiceError>
-    static func getCategories() -> SignalProducer<[Category], ServiceError>
-    static func getDongersForCategory(category: Category) -> SignalProducer<[Donger], ServiceError>
+    func getDongers() -> SignalProducer<[Donger], ServiceError>
+    func getCategories() -> SignalProducer<[Category], ServiceError>
+    func getDongersForCategory(category: Category) -> SignalProducer<[Donger], ServiceError>
 }
