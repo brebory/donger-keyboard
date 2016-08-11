@@ -34,9 +34,9 @@ public class DongerAPIService: DongerService {
 
     // MARK: DongerService
 
-    public class func getDongers() -> SignalProducer<[Donger], ServiceError> {
+    public func getDongers() -> SignalProducer<[Donger], ServiceError> {
         let producer = SignalProducer<[Donger], ServiceError>() { observer, disposable in
-            let request = createRequest(Constants.Services.GetDongers)
+            let request = self.dynamicType.createRequest(Constants.Services.GetDongers)
 
             request.responseJSON { response in
 
@@ -44,7 +44,7 @@ public class DongerAPIService: DongerService {
 
                 case .Success(let data):
                     guard let dongers = JSON(data)[Constants.Keys.Dongers].array?.flatMap({ json in Donger(text: json.stringValue) })
-                        else { return observer.sendFailed(.JSONParseError) }
+                        else { return observer.sendFailed(.JSONParseError(message:JSON(data)[Constants.Keys.Dongers].error?.description ?? "")) }
                     observer.sendNext(dongers)
                     observer.sendCompleted()
 
@@ -61,7 +61,7 @@ public class DongerAPIService: DongerService {
         return producer
     }
 
-    public class func getCategories() -> SignalProducer<[Category], ServiceError> {
+    public func getCategories() -> SignalProducer<[Category], ServiceError> {
         let producer = SignalProducer<[Category], ServiceError> { observer, disposable in
 
         }
@@ -69,7 +69,7 @@ public class DongerAPIService: DongerService {
         return producer
     }
 
-    public class func getDongersForCategory(category: Category) -> SignalProducer<[Donger], ServiceError> {
+    public func getDongersForCategory(category: Category) -> SignalProducer<[Donger], ServiceError> {
         let producer = SignalProducer<[Donger], ServiceError> { observer, disposable in
 
         }

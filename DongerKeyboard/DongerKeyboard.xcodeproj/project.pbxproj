@@ -52,6 +52,10 @@
 		4D8ED9A81D48FF8A00C552CA /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8ED9A71D48FF8A00C552CA /* TestViewController.swift */; };
 		4D8ED9AA1D49044900C552CA /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8ED9A91D49044900C552CA /* TestViewModel.swift */; };
 		4D8ED9AC1D49051600C552CA /* ApplicationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8ED9AB1D49051600C552CA /* ApplicationError.swift */; };
+		4DA208B41D5D03A900622B91 /* TestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA208B21D5D03A900622B91 /* TestCollectionViewCell.swift */; };
+		4DA208B51D5D03A900622B91 /* TestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA208B31D5D03A900622B91 /* TestCollectionViewCell.xib */; };
+		4DA208B81D5D07E000622B91 /* UIControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA208B71D5D07E000622B91 /* UIControlExtensions.swift */; };
+		4DA208BB1D5D2A0700622B91 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA208BA1D5D2A0700622B91 /* UIViewControllerExtensions.swift */; };
 		4DB653FA1D1C840C0002F17F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB653F91D1C840C0002F17F /* AppDelegate.swift */; };
 		4DB653FF1D1C840C0002F17F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DB653FD1D1C840C0002F17F /* Main.storyboard */; };
 		4DB654021D1C840C0002F17F /* DongerKeyboard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4DB654001D1C840C0002F17F /* DongerKeyboard.xcdatamodeld */; };
@@ -165,6 +169,10 @@
 		4D8ED9A71D48FF8A00C552CA /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		4D8ED9A91D49044900C552CA /* TestViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 		4D8ED9AB1D49051600C552CA /* ApplicationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationError.swift; sourceTree = "<group>"; };
+		4DA208B21D5D03A900622B91 /* TestCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCollectionViewCell.swift; sourceTree = "<group>"; };
+		4DA208B31D5D03A900622B91 /* TestCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestCollectionViewCell.xib; sourceTree = "<group>"; };
+		4DA208B71D5D07E000622B91 /* UIControlExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlExtensions.swift; sourceTree = "<group>"; };
+		4DA208BA1D5D2A0700622B91 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		4DB653F61D1C840C0002F17F /* DongerKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DongerKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB653F91D1C840C0002F17F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DB653FE1D1C840C0002F17F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -334,6 +342,8 @@
 			isa = PBXGroup;
 			children = (
 				4D8ED9A71D48FF8A00C552CA /* TestViewController.swift */,
+				4DA208B21D5D03A900622B91 /* TestCollectionViewCell.swift */,
+				4DA208B31D5D03A900622B91 /* TestCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -352,6 +362,22 @@
 				4D8ED9A51D48FEDC00C552CA /* Test.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		4DA208B61D5D07BC00622B91 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4DA208B71D5D07E000622B91 /* UIControlExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4DA208B91D5D29E800622B91 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4DA208BA1D5D2A0700622B91 /* UIViewControllerExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		4DB653ED1D1C840C0002F17F = {
@@ -386,6 +412,7 @@
 		4DB653F81D1C840C0002F17F /* DongerKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				4DA208B91D5D29E800622B91 /* Extensions */,
 				4D8ED9A41D48FEC600C552CA /* Storyboards */,
 				4D8E3CC41D47D9D000BD68DF /* ViewModels */,
 				4D8E3CC31D47D9C800BD68DF /* Views */,
@@ -429,6 +456,7 @@
 		4DB654401D1C8A8A0002F17F /* DongerKit */ = {
 			isa = PBXGroup;
 			children = (
+				4DA208B61D5D07BC00622B91 /* Extensions */,
 				4D8E3C971D41790100BD68DF /* Errors */,
 				4D8E3C901D41771300BD68DF /* Models */,
 				4D8E3C791D416DB400BD68DF /* Services */,
@@ -643,6 +671,7 @@
 				4DB654071D1C840C0002F17F /* LaunchScreen.storyboard in Resources */,
 				4DB654041D1C840C0002F17F /* Assets.xcassets in Resources */,
 				4D8ED9A61D48FEDC00C552CA /* Test.storyboard in Resources */,
+				4DA208B51D5D03A900622B91 /* TestCollectionViewCell.xib in Resources */,
 				4DB653FF1D1C840C0002F17F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -751,9 +780,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DA208B41D5D03A900622B91 /* TestCollectionViewCell.swift in Sources */,
 				4DB653FA1D1C840C0002F17F /* AppDelegate.swift in Sources */,
 				4D8ED9A81D48FF8A00C552CA /* TestViewController.swift in Sources */,
 				4D8ED9AA1D49044900C552CA /* TestViewModel.swift in Sources */,
+				4DA208BB1D5D2A0700622B91 /* UIViewControllerExtensions.swift in Sources */,
 				4DB654021D1C840C0002F17F /* DongerKeyboard.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -788,6 +819,7 @@
 			files = (
 				4D8E3C991D41793E00BD68DF /* ServiceError.swift in Sources */,
 				4D8E3C921D41772300BD68DF /* Donger.swift in Sources */,
+				4DA208B81D5D07E000622B91 /* UIControlExtensions.swift in Sources */,
 				4D8E3C9F1D417ED000BD68DF /* DongerLocalService.swift in Sources */,
 				4D8E3CA21D417EFD00BD68DF /* DongerAPIService.swift in Sources */,
 				4D8ED9AC1D49051600C552CA /* ApplicationError.swift in Sources */,

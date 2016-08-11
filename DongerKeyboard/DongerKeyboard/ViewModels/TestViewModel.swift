@@ -23,18 +23,34 @@ class TestViewModel {
         }
     }
 
-    var service: DongerService?
-    var disposable: Disposable?
+    // MARK: - Properties
 
-    var signal: Signal<[Donger], ServiceError> {
-        //guard let service = self.service
-        //    else { return }
+    private var service: DongerService
+    private var disposable: Disposable?
 
-        service!.type
-        //service?.type.getDongers().startWithSignal
-    }
+    lazy var refresh: Action<UIControl?, [Donger], ServiceError> = { [unowned self] in
+        return Action<UIControl?, [Donger], ServiceError>(self.getDongersFromService)
+    }()
+
+    let dongers: MutableProperty<[Donger]> = MutableProperty([])
+
+    // MARK: - Initialization
 
     init(service: DongerService) {
         self.service = service
+        self.dongers <~ self.refresh.values
+    }
+
+    // MARK: - Private Helper Methods
+
+    private func getDongersFromService(control: UIControl?) -> SignalProducer<[Donger], ServiceError> {
+        let endRefreshingClosure = { [control] in
+            guard let refreshControl = control as? UIRefreshControl
+                else { return }
+
+            refreshControl.endRefreshing()
+        }
+
+        return self.service.getDongers().on(completed: endRefreshingClosure, failed: { _ in endRefreshingClosure() })
     }
 }

@@ -15,7 +15,7 @@ import SwiftyJSON
  *  Implements the static DongerService protocol by retrieving dongers
  *  from a flat file in the app bundle.
  */
- public class DongerLocalService: DongerService {
+ public class DongerLocalService {
 
     /**
      *  Constants struct for static constants
@@ -24,8 +24,8 @@ import SwiftyJSON
 
         private struct Errors {
             private struct Messages {
-                static let FileNotFound = "STR_IOERROR_FILE_NOT_FOUND"
-                static let FileCorrupted = "STR_IOERROR_FILE_CORRUPTED"
+                static let FileNotFound = "STR_IOERROR_DONGERLOCALSERVICE_FILE_NOT_FOUND"
+                static let FileCorrupted = "STR_IOERROR_DONGERLOCALSERVICE_FILE_CORRUPTED"
             }
 
             private struct Codes {
@@ -33,14 +33,33 @@ import SwiftyJSON
                 static let FileCorrupted = 9002
             }
         }
+
+        static let JSONFileType = "json"
     }
 
-    var filename: String?
+    // MARK: - Static Properties
 
     /**
      *  Private reference to the default NSFileManager.
      */
     private static let fileManager = NSFileManager.defaultManager()
+
+    // MARK: - Instance Properties
+
+    var filename: String
+
+    // MARK: - Initializers
+
+    public init(filename: String) {
+        self.filename = filename
+    }
+}
+
+// MARK: - DongerService Methods
+
+extension DongerLocalService: DongerService {
+
+    // MARK: - Protocol Methods
 
     /**
      *  Retrieve the list of dongers from the flat file.
@@ -52,69 +71,109 @@ import SwiftyJSON
      *  dongers <~ dongerProducer
      *  ```
      *
+     *  - returns: A SignalProducer for the array of dongers in the flat file.
      */
     public func getDongers() -> SignalProducer<[Donger], ServiceError> {
-        let producer = SignalProducer<[Donger], ServiceError>() { observer, disposable in
+        let producer = SignalProducer<[Donger], ServiceError>() { [weak self] observer, disposable in
 
-            // Fail if the main bundle can't find a path for the requested resource.
-            guard let filePath = NSBundle.mainBundle().pathForResource(self.filename ?? "", ofType: )
-                else { return observer.sendFailed(.IOError(code: Constants.Errors.Codes.FileNotFound,
-                                                           message: Constants.Errors.Messages.FileNotFound)) }
+            guard let strongSelf = self
+                else { return observer.sendFailed(.LifecycleError) }
 
-            // Fail if the file manager can't find or open the file at the requested path.
-            guard let contents = fileManager.contentsAtPath(filePath)
-                else { return observer.sendFailed(.IOError(code: Constants.Errors.Codes.FileCorrupted,
-                                                           message: Constants.Errors.Messages.FileCorrupted)) }
+            do {
+                let filePath = try strongSelf.getPathForFilename(strongSelf.filename, fileType: Constants.JSONFileType)
+                let contents = try strongSelf.getContentsForPath(filePath)
+                let dictionary = try strongSelf.parseContentsAsJSON(contents)
+                let dongers =  strongSelf.parseJSONAsDongers(dictionary)
 
-            // Fail if the requested file can't be parsed as a json dictionary.
-            guard let dictionary = JSON(contents).dictionary
-                else { return observer.sendFailed(.JSONParseError) }
+                observer.sendNext(dongers)
+                observer.sendCompleted()
 
-            let dongers = dictionary.values.map { (json) -> Donger? in
-                guard let text = json.string else { return nil }
-                return Donger(text: text)
-            }.flatMap { $0 }
-
-            observer.sendNext(dongers)
-            observer.sendCompleted()
-        }
-
-        return producer
-    }
-
-    public func getCategories() -> SignalProducer<[Category], ServiceError> {
-        let producer = SignalProducer<[Category], ServiceError> { observer, disposable in
-
-            // Fail if the main bundle can't find a path for the requested resource.
-            guard let filePath = NSBundle.mainBundle().pathForResource(Constants.FileName, ofType: Constants.FileExtension)
-                else { return observer.sendFailed(.IOError(code: Constants.Errors.Codes.FileNotFound,
-                    message: Constants.Errors.Messages.FileNotFound)) }
-
-            // Fail if the file manager can't find or open the file at the requested path.
-            guard let contents = fileManager.contentsAtPath(filePath)
-                else { return observer.sendFailed(.IOError(code: Constants.Errors.Codes.FileCorrupted,
-                    message: Constants.Errors.Messages.FileCorrupted)) }
-
-            // Fail if the requested file can't be parsed as a json dictionary.
-            guard let dictionary = JSON(contents).dictionary
-                else { return observer.sendFailed(.JSONParseError) }
-
-            let categories =  dictionary.keys.enumerate().map { (index, text) -> Category in
-                return .Root(id: index, name: text)
+            } catch let error as ServiceError {
+                observer.sendFailed(error)
+            } catch {
+                observer.sendFailed(.UnspecifiedError(code: error._code))
             }
 
-            observer.sendNext(categories)
-            observer.sendCompleted()
         }
 
         return producer
     }
 
-    public func getDongersForCategory(category: Category) -> SignalProducer<[Donger], ServiceError> {
-        let producer = SignalProducer<[Donger], ServiceError> { observer, disposable in
+    // TODO: Document
+    public func getCategories() -> SignalProducer<[Category], ServiceError> {
+        let producer = SignalProducer<[Category], ServiceError> { [weak self] observer, disposable in
 
+            guard let strongSelf = self
+                else { return observer.sendFailed(.LifecycleError) }
+
+            do {
+                let filePath = try strongSelf.getPathForFilename(strongSelf.filename, fileType: Constants.JSONFileType)
+                let contents = try strongSelf.getContentsForPath(filePath)
+                let dictionary = try strongSelf.parseContentsAsJSON(contents)
+                let categories =  strongSelf.parseJSONAsCategories(dictionary)
+
+                observer.sendNext(categories)
+                observer.sendCompleted()
+
+            } catch let error as ServiceError {
+                observer.sendFailed(error)
+            } catch {
+                observer.sendFailed(.UnspecifiedError(code: error._code))
+            }
         }
 
         return producer
+    }
+
+    // TODO: Implement
+    public func getDongersForCategory(category: Category) -> SignalProducer<[Donger], ServiceError> {
+        let producer = SignalProducer<[Donger], ServiceError> { observer, disposable in
+            // Get the dongers for the specific category from the file at self.filename.
+        }
+
+        return producer
+    }
+
+    // MARK: - Private DongerService Helper Methods
+
+    // TODO: Document
+    private func getPathForFilename(filename: String, fileType: String) throws -> String {
+        // Fail if the main bundle can't find a path for the requested resource.
+        guard let filePath = NSBundle(forClass: self.dynamicType.self).pathForResource(filename, ofType: fileType)
+            else { throw ServiceError.IOError(code: Constants.Errors.Codes.FileNotFound,
+                                              message: Constants.Errors.Messages.FileNotFound) }
+        return filePath
+    }
+
+    // TODO: Document
+    private func getContentsForPath(path: String) throws -> NSData {
+        // Fail if the file manager can't find or open the file at the requested path.
+        guard let contents = self.dynamicType.fileManager.contentsAtPath(path)
+            else { throw ServiceError.IOError(code: Constants.Errors.Codes.FileCorrupted,
+                                              message: Constants.Errors.Messages.FileCorrupted) }
+        return contents
+    }
+
+    // TODO: Document
+    private func parseContentsAsJSON(contents: NSData) throws -> [String : JSON] {
+        // Fail if the requested file can't be parsed as a json dictionary.
+        guard let dictionary = JSON(contents).dictionary
+            else { throw ServiceError.JSONParseError(message: JSON(contents).error?.description ?? "") }
+        return dictionary
+    }
+
+    // TODO: Document
+    private func parseJSONAsDongers(json: [String : JSON]) -> [Donger] {
+        return json.values.map { (json) -> Donger? in
+            guard let text = json.string else { return nil }
+            return Donger(text: text)
+        }.flatMap { $0 }
+    }
+
+    // TODO: Document
+    private func parseJSONAsCategories(json: [String : JSON]) -> [Category] {
+        return json.keys.enumerate().map { (index, text) -> Category in
+            return .Root(id: index, name: text)
+        }
     }
 }

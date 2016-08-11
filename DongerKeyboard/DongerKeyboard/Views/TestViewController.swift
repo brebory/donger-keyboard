@@ -9,36 +9,90 @@
 import UIKit
 import ReactiveCocoa
 import DongerKit
+import Cartography
 
 class TestViewController: UIViewController {
 
+    private struct Constants {
+        private struct Identifiers {
+            static let DongersCell = "DongersCell"
+        }
+
+        private struct Nibs {
+            static let TestCollectionViewCell = "TestCollectionViewCell"
+        }
+    }
+
+
     @IBOutlet weak var collectionView: UICollectionView!
 
-    var dongers = MutableProperty<[Donger]>([])
+    var viewModel: TestViewModel = {
+        let service = DongerLocalService(filename: "dongers")
+        return TestViewModel(service: service)
+    }()
+
+    var disposables: [Disposable] = []
+
+    // MARK: Initialization
+
+    deinit {
+        disposables.forEach { disposable in
+            if !disposable.disposed {
+                disposable.dispose()
+            }
+        }
+    }
+
+    // MARK: UIView Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        DongerLocalService.getDongers().startWithSignal { [unowned self] signal, disposable in
-            guard let strongSelf = self else { return }
-        }
+        setupCollectionView()
+        setupConstraints()
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.viewModel.refresh.apply(nil).start()
+        self.viewModel.refresh.errors.on(next: { [weak self] error in
+            guard let strongSelf = self
+                else { return }
+            // TODO: Localization
+            strongSelf.alertError(error, withTitle: "Error")
+        })
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
+    // MARK: Layout Helpers
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func setupConstraints() {
+
+        // Set up the collectionView with equal constraints to the superview margins.
+        constrain(collectionView, view) { collectionView, superview in
+
+            collectionView.top == superview.topMargin + 8
+            collectionView.bottom == superview.bottomMargin - 8
+            collectionView.left == superview.leftMargin
+            collectionView.right == superview.rightMargin
+        }
     }
-    */
+
+    func setupCollectionView() {
+        self.collectionView.registerNib(UINib(nibName: Constants.Nibs.TestCollectionViewCell, bundle: NSBundle.mainBundle()),
+                                        forCellWithReuseIdentifier: Constants.Identifiers.DongersCell)
+        let refreshControl = UIRefreshControl()
+        let disposable = refreshControl.addAction(viewModel.refresh, forControlEvents: .ValueChanged)
+        disposables.append(disposable)
+
+        self.collectionView.addSubview(refreshControl)
+
+        self.collectionView.alwaysBounceVertical = true
+    }
 
 }
 
@@ -49,10 +103,19 @@ extension TestViewController: UICollectionViewDelegate {
 extension TestViewController: UICollectionViewDataSource {
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dongers.value.count
+        return viewModel.dongers.value.count
     }
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Constants.Identifiers.DongersCell, forIndexPath: indexPath)
 
+        guard let testCell = cell as? TestCollectionViewCell
+            else { return cell }
+
+        if (indexPath.row < viewModel.dongers.value.count) {
+            testCell.textLabel.text = viewModel.dongers.value[indexPath.row].text
+        }
+
+        return cell
     }
 }

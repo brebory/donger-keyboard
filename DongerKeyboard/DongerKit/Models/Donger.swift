@@ -9,5 +9,5 @@
 import Foundation
 
 public struct Donger {
-    var text: String
+    public var text: String
 }
