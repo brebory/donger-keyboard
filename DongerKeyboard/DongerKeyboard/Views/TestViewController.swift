@@ -10,6 +10,7 @@ import UIKit
 import ReactiveCocoa
 import DongerKit
 import Cartography
+import Result
 
 class TestViewController: UIViewController {
 
@@ -20,6 +21,21 @@ class TestViewController: UIViewController {
 
         private struct Nibs {
             static let TestCollectionViewCell = "TestCollectionViewCell"
+        }
+
+        private struct Errors {
+
+            // TODO: Add to localization file
+            static let AlertTitle = "STR_TESTVIEWCONTROLLER_ERROR_ALERT_TITLE"
+
+            private struct Messages {
+                // TODO: Add to localization file
+                static let CollectionViewBounds = "STR_DATAINTEGRITYERROR_TESTVIEWCONTROLLER_COLLECTION_VIEW_BOUNDS"
+            }
+
+            private struct Codes {
+                static let CollectionViewBounds = 120001
+            }
         }
     }
 
@@ -54,12 +70,12 @@ class TestViewController: UIViewController {
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        self.viewModel.dongers.signal.on(next: { [weak self] _ in self?.collectionView.reloadData() })
         self.viewModel.refresh.apply(nil).start()
         self.viewModel.refresh.errors.on(next: { [weak self] error in
             guard let strongSelf = self
                 else { return }
-            // TODO: Localization
-            strongSelf.alertError(error, withTitle: "Error")
+            strongSelf.alertError(error, withTitle: Constants.Errors.AlertTitle)
         })
     }
 
@@ -96,8 +112,33 @@ class TestViewController: UIViewController {
 
 }
 
-extension TestViewController: UICollectionViewDelegate {
+extension TestViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        //let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Constants.Identifiers.DongersCell, forIndexPath: indexPath)
 
+        //guard let testCell = cell as? TestCollectionViewCell
+        //    else { return cell.frame.size }
+
+
+        let result = viewModel.dongers.withValue { /*[testCell]*/ dongers -> Result<CGSize, ApplicationError> in
+            if (indexPath.row < dongers.count) {
+                let fontSize = (dongers[indexPath.row].text as NSString).sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(17)])
+                return .Success(fontSize)
+            } else {
+                let message = NSLocalizedString(Constants.Errors.Messages.CollectionViewBounds, bundle: NSBundle(forClass: TestViewController.self), comment: "IndexPath (%d,%d) out of bounds for UICollectionView %@")
+                return .Failure(.DataIntegrityError(message: message, code: Constants.Errors.Codes.CollectionViewBounds))
+            }
+        }
+
+        switch result {
+        case .Success(let size):
+            // TODO: Factor into method, add constants for padding
+            return CGSizeMake(size.width + 10, size.height + 10)
+        case .Failure(_):
+            // TODO: Log error.
+            return CGSizeMake(0, 0)
+        }
+    }
 }
 
 extension TestViewController: UICollectionViewDataSource {
@@ -112,9 +153,12 @@ extension TestViewController: UICollectionViewDataSource {
         guard let testCell = cell as? TestCollectionViewCell
             else { return cell }
 
-        if (indexPath.row < viewModel.dongers.value.count) {
-            testCell.textLabel.text = viewModel.dongers.value[indexPath.row].text
+        viewModel.dongers.withValue { dongers in
+            if (indexPath.row < dongers.count) {
+                testCell.textLabel.text = dongers[indexPath.row].text
+            }
         }
+
 
         return cell
     }

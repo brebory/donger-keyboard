@@ -62,16 +62,16 @@ extension DongerLocalService: DongerService {
     // MARK: - Protocol Methods
 
     /**
-     *  Retrieve the list of dongers from the flat file.
-     *
-     *  ### Example
-     *  ```swift
-     *  let dongerProducer = dongerService.getDongers()
-     *  let dongers = MutableProperty<[Donger]>([])
-     *  dongers <~ dongerProducer
-     *  ```
-     *
-     *  - returns: A SignalProducer for the array of dongers in the flat file.
+     Retrieve the list of dongers from the flat file.
+
+     ### Example
+     ```swift
+     let dongerProducer = dongerService.getDongers()
+     let dongers = MutableProperty<[Donger]>([])
+     dongers <~ dongerProducer
+     ```
+
+     - returns: A SignalProducer for the array of dongers in the flat file.
      */
     public func getDongers() -> SignalProducer<[Donger], ServiceError> {
         let producer = SignalProducer<[Donger], ServiceError>() { [weak self] observer, disposable in
@@ -99,7 +99,11 @@ extension DongerLocalService: DongerService {
         return producer
     }
 
-    // TODO: Document
+    /**
+
+
+     - returns: <#return value description#>
+     */
     public func getCategories() -> SignalProducer<[Category], ServiceError> {
         let producer = SignalProducer<[Category], ServiceError> { [weak self] observer, disposable in
 
@@ -136,12 +140,27 @@ extension DongerLocalService: DongerService {
 
     // MARK: - Private DongerService Helper Methods
 
-    // TODO: Document
+    /**
+     Gets the fully qualified path for the specified file in the current framework bundle.
+     Uses NSBundle(forClass:) to obtain the current framework bundle.
+
+     - parameter filename: The filename to search for.
+     - parameter fileType: The file extension to search for.
+
+     - throws: ServiceError.IOError if the file is not found.
+
+     - returns: The full pathname for the resource.
+     */
     private func getPathForFilename(filename: String, fileType: String) throws -> String {
         // Fail if the main bundle can't find a path for the requested resource.
         guard let filePath = NSBundle(forClass: self.dynamicType.self).pathForResource(filename, ofType: fileType)
-            else { throw ServiceError.IOError(code: Constants.Errors.Codes.FileNotFound,
-                                              message: Constants.Errors.Messages.FileNotFound) }
+            else {
+                let message = NSLocalizedString(Constants.Errors.Messages.FileNotFound,
+                                                bundle: NSBundle(forClass: DongerLocalService.self),
+                                                comment: "The file \"%@\" was not found.")
+                throw ServiceError.IOError(code: Constants.Errors.Codes.FileNotFound,
+                                           message: String(format: message, filename))
+        }
         return filePath
     }
 
@@ -149,22 +168,28 @@ extension DongerLocalService: DongerService {
     private func getContentsForPath(path: String) throws -> NSData {
         // Fail if the file manager can't find or open the file at the requested path.
         guard let contents = self.dynamicType.fileManager.contentsAtPath(path)
-            else { throw ServiceError.IOError(code: Constants.Errors.Codes.FileCorrupted,
-                                              message: Constants.Errors.Messages.FileCorrupted) }
+            else {
+                let message = NSLocalizedString(Constants.Errors.Messages.FileCorrupted,
+                                                bundle: NSBundle(forClass: DongerLocalService.self),
+                                                comment: "The file at the path \"%@\" was corrupted or couldn't be opened")
+                throw ServiceError.IOError(code: Constants.Errors.Codes.FileCorrupted,
+                                           message: String(format: message, path))
+        }
         return contents
     }
 
     // TODO: Document
     private func parseContentsAsJSON(contents: NSData) throws -> [String : JSON] {
         // Fail if the requested file can't be parsed as a json dictionary.
-        guard let dictionary = JSON(contents).dictionary
+        let jsonObject = try NSJSONSerialization.JSONObjectWithData(contents, options: .AllowFragments)
+        guard let dictionary = JSON(jsonObject).dictionary
             else { throw ServiceError.JSONParseError(message: JSON(contents).error?.description ?? "") }
         return dictionary
     }
 
     // TODO: Document
     private func parseJSONAsDongers(json: [String : JSON]) -> [Donger] {
-        return json.values.map { (json) -> Donger? in
+        return Array(json.values).reduce([JSON]()) { $0 + $1.arrayValue }.map { (json) -> Donger? in
             guard let text = json.string else { return nil }
             return Donger(text: text)
         }.flatMap { $0 }

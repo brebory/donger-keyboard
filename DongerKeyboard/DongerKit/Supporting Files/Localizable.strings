@@ -5,4 +5,18 @@
   Created by Brendon Roberto on 7/21/16.
   Copyright © 2016 Snackpack Games. All rights reserved.
 */
-"STR_SERVICE_ERROR_HTTP_ERROR_MESSAGE" = "HTTP Error - Code: %@, Message: %@";
+
+// ServiceError
+"STR_SERVICE_ERROR_HTTP_ERROR_MESSAGE" = "HTTP Error - Code: %d, Message: %@";
+"STR_SERVICE_ERROR_JSON_PARSE_ERROR_MESSAGE" = "JSON Parse Error - Code: %d, Message: Couldn't parse JSON response. %@";
+"STR_SERVICE_ERROR_IO_ERROR_MESSAGE" = "IO Error - Code: %d, Message: %@";
+"STR_SERVICE_ERROR_LIFECYCLE_ERROR_MESSAGE" = "Lifecycle Error - Code: %d, Message: Object has gone out of scope.";
+"STR_SERVICE_ERROR_UNSPECIFIED_ERROR_MESSAGE" = "Unspecified Error - Code: %d, Message: An unspecified error occured.";
+
+// ApplicationError
+"STR_APPLICATION_ERROR_INIT_ERROR_MESSAGE" = "Application Initialization Error - Code: %d, Message: %@";
+"STR_APPLICATION_ERROR_DATA_INTEGRITY_ERROR_MESSAGE" = "Data Integrity Error - Code: %d, Message: %@";
+
+// DongerLocalService
+"STR_IOERROR_DONGERLOCALSERVICE_FILE_NOT_FOUND" = "The file \"%@\" was not found.";
+"STR_IOERROR_DONGERLOCALSERVICE_FILE_CORRUPTED" = "The file at the path \"%@\" was corrupted or couldn't be opened";

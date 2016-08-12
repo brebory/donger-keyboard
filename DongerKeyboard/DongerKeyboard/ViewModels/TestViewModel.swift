@@ -9,6 +9,7 @@
 import Foundation
 import ReactiveCocoa
 import DongerKit
+import Result
 
 class TestViewModel {
     private struct Constants {
