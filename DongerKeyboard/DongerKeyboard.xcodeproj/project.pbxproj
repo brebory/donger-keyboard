@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D2288C21D6F881D00FF017E /* UIScrollViewDelegateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2288C11D6F881D00FF017E /* UIScrollViewDelegateExtensions.swift */; };
 		4D79092C1D26F969003D38AF /* dongers.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D79092B1D26F969003D38AF /* dongers.json */; };
 		4D8C8CEE1D2EA8C100A49489 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8C8CED1D2EA8C100A49489 /* ReactiveCocoa.framework */; };
 		4D8C8CF61D2EA91200A49489 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8C8CED1D2EA8C100A49489 /* ReactiveCocoa.framework */; };
@@ -56,6 +57,7 @@
 		4DA208B51D5D03A900622B91 /* TestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA208B31D5D03A900622B91 /* TestCollectionViewCell.xib */; };
 		4DA208B81D5D07E000622B91 /* UIControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA208B71D5D07E000622B91 /* UIControlExtensions.swift */; };
 		4DA208BB1D5D2A0700622B91 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA208BA1D5D2A0700622B91 /* UIViewControllerExtensions.swift */; };
+		4DA478611D6CE27800522F79 /* KeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA478601D6CE27800522F79 /* KeyboardViewModel.swift */; };
 		4DB653FA1D1C840C0002F17F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB653F91D1C840C0002F17F /* AppDelegate.swift */; };
 		4DB653FF1D1C840C0002F17F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DB653FD1D1C840C0002F17F /* Main.storyboard */; };
 		4DB654021D1C840C0002F17F /* DongerKeyboard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4DB654001D1C840C0002F17F /* DongerKeyboard.xcdatamodeld */; };
@@ -144,6 +146,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4D2288C11D6F881D00FF017E /* UIScrollViewDelegateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewDelegateExtensions.swift; sourceTree = "<group>"; };
 		4D79092B1D26F969003D38AF /* dongers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dongers.json; sourceTree = "<group>"; };
 		4D79093F1D2EA2A0003D38AF /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		4D8C8CED1D2EA8C100A49489 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
@@ -173,6 +176,7 @@
 		4DA208B31D5D03A900622B91 /* TestCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestCollectionViewCell.xib; sourceTree = "<group>"; };
 		4DA208B71D5D07E000622B91 /* UIControlExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlExtensions.swift; sourceTree = "<group>"; };
 		4DA208BA1D5D2A0700622B91 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		4DA478601D6CE27800522F79 /* KeyboardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardViewModel.swift; sourceTree = "<group>"; };
 		4DB653F61D1C840C0002F17F /* DongerKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DongerKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB653F91D1C840C0002F17F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DB653FE1D1C840C0002F17F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -360,6 +364,8 @@
 			isa = PBXGroup;
 			children = (
 				4D8ED9A51D48FEDC00C552CA /* Test.storyboard */,
+				4DB653FD1D1C840C0002F17F /* Main.storyboard */,
+				4DB654051D1C840C0002F17F /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -368,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				4DA208B71D5D07E000622B91 /* UIControlExtensions.swift */,
+				4D2288C11D6F881D00FF017E /* UIScrollViewDelegateExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -378,6 +385,15 @@
 				4DA208BA1D5D2A0700622B91 /* UIViewControllerExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4DA478621D6DDFFA00522F79 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4DB654031D1C840C0002F17F /* Assets.xcassets */,
+				4DB654081D1C840C0002F17F /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		4DB653ED1D1C840C0002F17F = {
@@ -412,16 +428,13 @@
 		4DB653F81D1C840C0002F17F /* DongerKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				4DB653F91D1C840C0002F17F /* AppDelegate.swift */,
 				4DA208B91D5D29E800622B91 /* Extensions */,
 				4D8ED9A41D48FEC600C552CA /* Storyboards */,
 				4D8E3CC41D47D9D000BD68DF /* ViewModels */,
 				4D8E3CC31D47D9C800BD68DF /* Views */,
-				4DB653F91D1C840C0002F17F /* AppDelegate.swift */,
-				4DB653FD1D1C840C0002F17F /* Main.storyboard */,
-				4DB654031D1C840C0002F17F /* Assets.xcassets */,
-				4DB654051D1C840C0002F17F /* LaunchScreen.storyboard */,
-				4DB654081D1C840C0002F17F /* Info.plist */,
 				4DB654001D1C840C0002F17F /* DongerKeyboard.xcdatamodeld */,
+				4DA478621D6DDFFA00522F79 /* Supporting Files */,
 			);
 			path = DongerKeyboard;
 			sourceTree = "<group>";
@@ -449,6 +462,7 @@
 			children = (
 				4DB654301D1C88A00002F17F /* KeyboardViewController.swift */,
 				4DB654321D1C88A00002F17F /* Info.plist */,
+				4DA478601D6CE27800522F79 /* KeyboardViewModel.swift */,
 			);
 			path = Donger;
 			sourceTree = "<group>";
@@ -810,6 +824,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DB654311D1C88A00002F17F /* KeyboardViewController.swift in Sources */,
+				4DA478611D6CE27800522F79 /* KeyboardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -818,6 +833,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D8E3C991D41793E00BD68DF /* ServiceError.swift in Sources */,
+				4D2288C21D6F881D00FF017E /* UIScrollViewDelegateExtensions.swift in Sources */,
 				4D8E3C921D41772300BD68DF /* Donger.swift in Sources */,
 				4DA208B81D5D07E000622B91 /* UIControlExtensions.swift in Sources */,
 				4D8E3C9F1D417ED000BD68DF /* DongerLocalService.swift in Sources */,
@@ -885,6 +901,7 @@
 				4DB653FE1D1C840C0002F17F /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		4DB654051D1C840C0002F17F /* LaunchScreen.storyboard */ = {
@@ -893,6 +910,7 @@
 				4DB654061D1C840C0002F17F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

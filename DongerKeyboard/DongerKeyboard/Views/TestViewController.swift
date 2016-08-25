@@ -15,6 +15,8 @@ import Result
 class TestViewController: UIViewController {
 
     private struct Constants {
+        static let DongersCellPadding: CGFloat = 10
+
         private struct Identifiers {
             static let DongersCell = "DongersCell"
         }
@@ -120,20 +122,23 @@ extension TestViewController: UICollectionViewDelegateFlowLayout {
         //    else { return cell.frame.size }
 
 
-        let result = viewModel.dongers.withValue { /*[testCell]*/ dongers -> Result<CGSize, ApplicationError> in
+        let result = viewModel.dongers.withValue { dongers -> Result<CGSize, ApplicationError> in
             if (indexPath.row < dongers.count) {
                 let fontSize = (dongers[indexPath.row].text as NSString).sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(17)])
                 return .Success(fontSize)
             } else {
-                let message = NSLocalizedString(Constants.Errors.Messages.CollectionViewBounds, bundle: NSBundle(forClass: TestViewController.self), comment: "IndexPath (%d,%d) out of bounds for UICollectionView %@")
-                return .Failure(.DataIntegrityError(message: message, code: Constants.Errors.Codes.CollectionViewBounds))
+                let message = NSLocalizedString(Constants.Errors.Messages.CollectionViewBounds,
+                                                bundle: NSBundle(forClass: TestViewController.self),
+                                                comment: "IndexPath (%d,%d) out of bounds for UICollectionView %@")
+                return .Failure(.DataIntegrityError(message: String(format: message, indexPath.section, indexPath.row, collectionView),
+                                                    code: Constants.Errors.Codes.CollectionViewBounds))
             }
         }
 
         switch result {
         case .Success(let size):
-            // TODO: Factor into method, add constants for padding
-            return CGSizeMake(size.width + 10, size.height + 10)
+            return CGSizeMake(size.width + Constants.DongersCellPadding,
+                              size.height + Constants.DongersCellPadding)
         case .Failure(_):
             // TODO: Log error.
             return CGSizeMake(0, 0)
