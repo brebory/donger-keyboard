@@ -20,10 +20,10 @@ class KeyboardViewController: UIInputViewController {
         }
     }
 
-    var nextKeyboardButton: UIButton!
-    var keyboardPageControl: UIPageControl!
-    var keyboardCollectionView: UICollectionView!
-    var categoriesTabBar: UITabBar!
+    @IBOutlet var nextKeyboardButton: UIButton!
+    @IBOutlet var keyboardPageControl: UIPageControl!
+    @IBOutlet var keyboardCollectionView: UICollectionView!
+    @IBOutlet var categoriesTabBar: UITabBar!
 
     lazy var viewModel: KeyboardViewModel = {
         let service = DongerLocalService(filename: "dongers")
@@ -100,11 +100,11 @@ class KeyboardViewController: UIInputViewController {
     }
 
     private func setupKeyboardPageControl() {
-
+        self.view.addSubview(self.keyboardPageControl)
     }
 
     private func setupCategoriesTabBar() {
-
+        self.view.addSubview(self.categoriesTabBar)
     }
 
     private func setupConstraints() {
@@ -112,9 +112,7 @@ class KeyboardViewController: UIInputViewController {
     }
 
     private func bindActions() {
-        self.racx_scrollViewDidEndDeceleratingSignal.observe { [unowned self] event in
-            self.updatePageControl.apply(event.value!).startOn(UIScheduler()).start()
-        }
+        self.racx_scrollViewDidEndDeceleratingSignal <~ self.updatePageControl |< UIScheduler()
     }
 }
 

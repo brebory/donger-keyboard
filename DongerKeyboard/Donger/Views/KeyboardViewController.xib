@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KeyboardViewController" customModule="Donger" customModuleProvider="target">
+            <connections>
+                <outlet property="categoriesTabBar" destination="0Xd-8m-CLH" id="TwO-H3-xeW"/>
+                <outlet property="keyboardCollectionView" destination="Ee7-iz-60i" id="zMA-RZ-0fC"/>
+                <outlet property="keyboardPageControl" destination="Grr-fg-3Sb" id="g8J-s3-K2c"/>
+                <outlet property="nextKeyboardButton" destination="ec6-ly-Uww" id="nds-lV-cuV"/>
+                <outlet property="view" destination="iN0-l3-epB" id="KkK-so-8Ee"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ee7-iz-60i">
+                    <rect key="frame" x="0.0" y="49" width="320" height="111"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zls-Nb-aBh">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Xd-8m-CLH">
+                    <rect key="frame" x="46" y="0.0" width="274" height="49"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <items>
+                        <tabBarItem systemItem="favorites" id="dsS-e9-mG9"/>
+                        <tabBarItem systemItem="more" id="Aea-DP-Q0h"/>
+                    </items>
+                </tabBar>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Grr-fg-3Sb">
+                    <rect key="frame" x="141" y="123" width="39" height="37"/>
+                </pageControl>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ec6-ly-Uww">
+                    <rect key="frame" x="0.0" y="0.0" width="46" height="49"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="46" id="Dr0-uc-MqH"/>
+                    </constraints>
+                    <state key="normal" title="Next"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Ee7-iz-60i" secondAttribute="trailing" id="7mC-uT-BCP"/>
+                <constraint firstItem="Ee7-iz-60i" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9oB-5W-m9e"/>
+                <constraint firstItem="ec6-ly-Uww" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="AtT-CW-JES"/>
+                <constraint firstItem="0Xd-8m-CLH" firstAttribute="leading" secondItem="ec6-ly-Uww" secondAttribute="trailing" id="Hc4-9J-EeT"/>
+                <constraint firstItem="ec6-ly-Uww" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="MKc-o1-Iqb"/>
+                <constraint firstAttribute="bottom" secondItem="Grr-fg-3Sb" secondAttribute="bottom" id="OYW-Fj-Mef"/>
+                <constraint firstAttribute="bottom" secondItem="Ee7-iz-60i" secondAttribute="bottom" id="Rad-wW-1by"/>
+                <constraint firstItem="0Xd-8m-CLH" firstAttribute="top" secondItem="ec6-ly-Uww" secondAttribute="top" id="Soe-79-gwU"/>
+                <constraint firstItem="ec6-ly-Uww" firstAttribute="height" secondItem="0Xd-8m-CLH" secondAttribute="height" id="Vrg-WY-iPQ"/>
+                <constraint firstItem="Grr-fg-3Sb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="YcT-LB-W8b"/>
+                <constraint firstAttribute="trailing" secondItem="0Xd-8m-CLH" secondAttribute="trailing" id="bKw-hM-8hl"/>
+                <constraint firstItem="Ee7-iz-60i" firstAttribute="top" secondItem="0Xd-8m-CLH" secondAttribute="bottom" id="qGD-0f-yye"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

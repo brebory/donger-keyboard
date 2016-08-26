@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4D2288C21D6F881D00FF017E /* UIScrollViewDelegateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2288C11D6F881D00FF017E /* UIScrollViewDelegateExtensions.swift */; };
+		4D2288C61D70C33F00FF017E /* ReactiveExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2288C51D70C33F00FF017E /* ReactiveExtensions.swift */; };
+		4D2288C91D7108C700FF017E /* KeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D2288C81D7108C700FF017E /* KeyboardViewController.xib */; };
 		4D79092C1D26F969003D38AF /* dongers.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D79092B1D26F969003D38AF /* dongers.json */; };
 		4D8C8CEE1D2EA8C100A49489 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8C8CED1D2EA8C100A49489 /* ReactiveCocoa.framework */; };
 		4D8C8CF61D2EA91200A49489 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8C8CED1D2EA8C100A49489 /* ReactiveCocoa.framework */; };
@@ -147,6 +149,8 @@
 
 /* Begin PBXFileReference section */
 		4D2288C11D6F881D00FF017E /* UIScrollViewDelegateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewDelegateExtensions.swift; sourceTree = "<group>"; };
+		4D2288C51D70C33F00FF017E /* ReactiveExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveExtensions.swift; sourceTree = "<group>"; };
+		4D2288C81D7108C700FF017E /* KeyboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyboardViewController.xib; sourceTree = "<group>"; };
 		4D79092B1D26F969003D38AF /* dongers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dongers.json; sourceTree = "<group>"; };
 		4D79093F1D2EA2A0003D38AF /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		4D8C8CED1D2EA8C100A49489 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
@@ -275,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				4DB654301D1C88A00002F17F /* KeyboardViewController.swift */,
+				4D2288C81D7108C700FF017E /* KeyboardViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 			children = (
 				4DA208B71D5D07E000622B91 /* UIControlExtensions.swift */,
 				4D2288C11D6F881D00FF017E /* UIScrollViewDelegateExtensions.swift */,
+				4D2288C51D70C33F00FF017E /* ReactiveExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -724,6 +730,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D2288C91D7108C700FF017E /* KeyboardViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -852,6 +859,7 @@
 				4D2288C21D6F881D00FF017E /* UIScrollViewDelegateExtensions.swift in Sources */,
 				4D8E3C921D41772300BD68DF /* Donger.swift in Sources */,
 				4DA208B81D5D07E000622B91 /* UIControlExtensions.swift in Sources */,
+				4D2288C61D70C33F00FF017E /* ReactiveExtensions.swift in Sources */,
 				4D8E3C9F1D417ED000BD68DF /* DongerLocalService.swift in Sources */,
 				4D8E3CA21D417EFD00BD68DF /* DongerAPIService.swift in Sources */,
 				4D8ED9AC1D49051600C552CA /* ApplicationError.swift in Sources */,
