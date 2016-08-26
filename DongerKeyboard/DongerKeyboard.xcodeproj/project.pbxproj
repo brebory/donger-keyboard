@@ -271,6 +271,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D2288C31D70BCA000FF017E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4DB654301D1C88A00002F17F /* KeyboardViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4D2288C41D70BCAA00FF017E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4DA478601D6CE27800522F79 /* KeyboardViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		4D79092A1D26F94A003D38AF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -460,9 +476,9 @@
 		4DB6542F1D1C88A00002F17F /* Donger */ = {
 			isa = PBXGroup;
 			children = (
-				4DB654301D1C88A00002F17F /* KeyboardViewController.swift */,
+				4D2288C41D70BCAA00FF017E /* ViewModels */,
+				4D2288C31D70BCA000FF017E /* Views */,
 				4DB654321D1C88A00002F17F /* Info.plist */,
-				4DA478601D6CE27800522F79 /* KeyboardViewModel.swift */,
 			);
 			path = Donger;
 			sourceTree = "<group>";

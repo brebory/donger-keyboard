@@ -35,11 +35,18 @@ class KeyboardViewModel {
     }
 
     private func getCategories(control: UIControl?) -> SignalProducer<[DongerCategory], ServiceError> {
+        let endRefreshingClosure = { [control] in
+            guard let refreshControl = control as? UIRefreshControl
+                else { return }
 
+            refreshControl.endRefreshing()
+        }
+
+        return self.service.getCategories().on(completed: endRefreshingClosure, failed: { _ in endRefreshingClosure() })
     }
 
 
     private func getDongersForCategory(category: DongerCategory) -> SignalProducer<[Donger], ServiceError> {
-
+        return self.service.getDongersForCategory(category)
     }
 }
