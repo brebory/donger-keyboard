@@ -51,10 +51,10 @@
 		4D8E3CAB1D427D5A00BD68DF /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8E3CA51D427D2500BD68DF /* SwiftyJSON.framework */; };
 		4D8E3CAC1D427D6000BD68DF /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8E3CA41D427D2500BD68DF /* Cartography.framework */; };
 		4D8E3CAE1D4292C300BD68DF /* SignalProducerMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E3CAD1D4292C300BD68DF /* SignalProducerMatchers.swift */; };
-		4D8ED9A61D48FEDC00C552CA /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D8ED9A51D48FEDC00C552CA /* Test.storyboard */; };
 		4D8ED9A81D48FF8A00C552CA /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8ED9A71D48FF8A00C552CA /* TestViewController.swift */; };
 		4D8ED9AA1D49044900C552CA /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8ED9A91D49044900C552CA /* TestViewModel.swift */; };
 		4D8ED9AC1D49051600C552CA /* ApplicationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8ED9AB1D49051600C552CA /* ApplicationError.swift */; };
+		4DA0795B1D76324C00E7F4D0 /* UITabBarDelegateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0795A1D76324C00E7F4D0 /* UITabBarDelegateExtensions.swift */; };
 		4DA208B41D5D03A900622B91 /* TestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA208B21D5D03A900622B91 /* TestCollectionViewCell.swift */; };
 		4DA208B51D5D03A900622B91 /* TestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA208B31D5D03A900622B91 /* TestCollectionViewCell.xib */; };
 		4DA208B81D5D07E000622B91 /* UIControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA208B71D5D07E000622B91 /* UIControlExtensions.swift */; };
@@ -172,10 +172,12 @@
 		4D8E3CA41D427D2500BD68DF /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
 		4D8E3CA51D427D2500BD68DF /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		4D8E3CAD1D4292C300BD68DF /* SignalProducerMatchers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProducerMatchers.swift; sourceTree = "<group>"; };
-		4D8ED9A51D48FEDC00C552CA /* Test.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
 		4D8ED9A71D48FF8A00C552CA /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		4D8ED9A91D49044900C552CA /* TestViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 		4D8ED9AB1D49051600C552CA /* ApplicationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationError.swift; sourceTree = "<group>"; };
+		4DA079581D76207500E7F4D0 /* DongerKeyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DongerKeyboard.entitlements; sourceTree = "<group>"; };
+		4DA079591D7620B400E7F4D0 /* Donger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Donger.entitlements; sourceTree = "<group>"; };
+		4DA0795A1D76324C00E7F4D0 /* UITabBarDelegateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarDelegateExtensions.swift; sourceTree = "<group>"; };
 		4DA208B21D5D03A900622B91 /* TestCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCollectionViewCell.swift; sourceTree = "<group>"; };
 		4DA208B31D5D03A900622B91 /* TestCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestCollectionViewCell.xib; sourceTree = "<group>"; };
 		4DA208B71D5D07E000622B91 /* UIControlExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlExtensions.swift; sourceTree = "<group>"; };
@@ -384,7 +386,6 @@
 		4D8ED9A41D48FEC600C552CA /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				4D8ED9A51D48FEDC00C552CA /* Test.storyboard */,
 				4DB653FD1D1C840C0002F17F /* Main.storyboard */,
 				4DB654051D1C840C0002F17F /* LaunchScreen.storyboard */,
 			);
@@ -396,6 +397,7 @@
 			children = (
 				4DA208B71D5D07E000622B91 /* UIControlExtensions.swift */,
 				4D2288C11D6F881D00FF017E /* UIScrollViewDelegateExtensions.swift */,
+				4DA0795A1D76324C00E7F4D0 /* UITabBarDelegateExtensions.swift */,
 				4D2288C51D70C33F00FF017E /* ReactiveExtensions.swift */,
 			);
 			path = Extensions;
@@ -450,6 +452,7 @@
 		4DB653F81D1C840C0002F17F /* DongerKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				4DA079581D76207500E7F4D0 /* DongerKeyboard.entitlements */,
 				4DB653F91D1C840C0002F17F /* AppDelegate.swift */,
 				4DA208B91D5D29E800622B91 /* Extensions */,
 				4D8ED9A41D48FEC600C552CA /* Storyboards */,
@@ -482,6 +485,7 @@
 		4DB6542F1D1C88A00002F17F /* Donger */ = {
 			isa = PBXGroup;
 			children = (
+				4DA079591D7620B400E7F4D0 /* Donger.entitlements */,
 				4D2288C41D70BCAA00FF017E /* ViewModels */,
 				4D2288C31D70BCA000FF017E /* Views */,
 				4DB654321D1C88A00002F17F /* Info.plist */,
@@ -653,6 +657,11 @@
 					4DB653F51D1C840C0002F17F = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = J6FJ2PZ3B4;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					4DB6540C1D1C840D0002F17F = {
 						CreatedOnToolsVersion = 7.3;
@@ -665,6 +674,11 @@
 					4DB6542D1D1C88A00002F17F = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = J6FJ2PZ3B4;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					4DB6543E1D1C8A8A0002F17F = {
 						CreatedOnToolsVersion = 7.3;
@@ -706,7 +720,6 @@
 			files = (
 				4DB654071D1C840C0002F17F /* LaunchScreen.storyboard in Resources */,
 				4DB654041D1C840C0002F17F /* Assets.xcassets in Resources */,
-				4D8ED9A61D48FEDC00C552CA /* Test.storyboard in Resources */,
 				4DA208B51D5D03A900622B91 /* TestCollectionViewCell.xib in Resources */,
 				4DB653FF1D1C840C0002F17F /* Main.storyboard in Resources */,
 			);
@@ -863,6 +876,7 @@
 				4D8E3C9F1D417ED000BD68DF /* DongerLocalService.swift in Sources */,
 				4D8E3CA21D417EFD00BD68DF /* DongerAPIService.swift in Sources */,
 				4D8ED9AC1D49051600C552CA /* ApplicationError.swift in Sources */,
+				4DA0795B1D76324C00E7F4D0 /* UITabBarDelegateExtensions.swift in Sources */,
 				4D8E3C7B1D416E7900BD68DF /* DongerService.swift in Sources */,
 				4D8E3C951D41775D00BD68DF /* Category.swift in Sources */,
 			);
@@ -1029,6 +1043,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DongerKeyboard/DongerKeyboard.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1046,6 +1061,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DongerKeyboard/DongerKeyboard.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1124,6 +1140,7 @@
 		4DB654371D1C88A00002F17F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Donger/Donger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1140,6 +1157,7 @@
 		4DB654381D1C88A00002F17F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Donger/Donger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

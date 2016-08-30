@@ -14,9 +14,14 @@ import Cartography
 
 class KeyboardViewController: UIInputViewController {
 
+    typealias DongerCategory = DongerKit.Category
+
     private struct Constants {
         private struct Identifiers {
             private static let KeyboardCollectionViewCell = "KeyboardCollectionViewCell"
+        }
+        private struct Nibs {
+            private static let KeyboardViewController = "KeyboardViewController"
         }
     }
 
@@ -80,31 +85,37 @@ class KeyboardViewController: UIInputViewController {
     }
 
     private func setupUI() {
+        let nib = UINib(nibName: Constants.Nibs.KeyboardViewController, bundle: NSBundle(forClass: self.dynamicType.self))
+        let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        self.view = view
+
         self.setupKeyboardCollectionView()
         self.setupKeyboardPageControl()
         self.setupCategoriesTabBar()
-        self.setupConstraints()
+        // self.setupConstraints()
     }
 
     private func setupKeyboardCollectionView() {
         self.keyboardCollectionView.showsHorizontalScrollIndicator = false
         self.keyboardCollectionView.pagingEnabled = true
+        self.keyboardCollectionView.backgroundColor = UIColor.whiteColor()
         self.keyboardCollectionView.delegate = self
         self.keyboardCollectionView.dataSource = self
 
         // TODO: Use actual dongers collection view cell once it's created, probably with registerNib(forCellWithReuseIdentifier:)
         self.keyboardCollectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: Constants.Identifiers.KeyboardCollectionViewCell)
 
-        self.view.addSubview(self.keyboardCollectionView)
+        // self.view.addSubview(self.keyboardCollectionView)
 
     }
 
     private func setupKeyboardPageControl() {
-        self.view.addSubview(self.keyboardPageControl)
+        // self.view.addSubview(self.keyboardPageControl)
     }
 
     private func setupCategoriesTabBar() {
-        self.view.addSubview(self.categoriesTabBar)
+        // self.view.addSubview(self.categoriesTabBar)
+        self.categoriesTabBar.delegate = self
     }
 
     private func setupConstraints() {
@@ -113,6 +124,30 @@ class KeyboardViewController: UIInputViewController {
 
     private func bindActions() {
         self.racx_scrollViewDidEndDeceleratingSignal <~ self.updatePageControl |< UIScheduler()
+
+        self.viewModel.dongers.signal.on(next: { [weak self] _ in self?.keyboardCollectionView.reloadData() })
+        self.viewModel.categories.signal.map(self.getTabBarItemsFromCategories).on(next: { [weak self] items in  self?.categoriesTabBar.setItems(items, animated: true)})
+        self.viewModel.refreshCategories.apply(nil).start()
+    }
+
+    private func getTabBarItemsFromCategories(categories: [DongerCategory]) -> [UITabBarItem] {
+        var items = [UITabBarItem]()
+        let moreItem = UITabBarItem(tabBarSystemItem: .More, tag: 0)
+        items.appendContentsOf(categories.prefix(4).map(self.getTabBarItemFromCategory))
+        items.append(moreItem)
+        return items
+    }
+
+    private func getTabBarItemFromCategory(category: DongerCategory) -> UITabBarItem {
+        switch category {
+        case .Node(_, let name, _):
+            let item = UITabBarItem(title: name, image: nil, selectedImage: nil)
+            return item
+        case .Root(_, let name):
+            let item = UITabBarItem(title: name, image: nil, selectedImage: nil)
+            return item
+
+        }
     }
 }
 

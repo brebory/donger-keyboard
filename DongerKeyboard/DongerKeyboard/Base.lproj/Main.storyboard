@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="L41-ts-atR">
-                                <rect key="frame" x="28" y="28" width="544" height="564"/>
+                                <rect key="frame" x="28" y="58" width="544" height="534"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UHD-4z-lxf">
                                     <size key="itemSize" width="50" height="50"/>
@@ -33,13 +33,21 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="JZh-gV-NZS"/>
                                 </connections>
                             </collectionView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Placeholder" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bHO-Xu-xp6">
+                                <rect key="frame" x="28" y="30" width="544" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="L41-ts-atR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" placeholder="YES" id="684-Ub-55c"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="L41-ts-atR" secondAttribute="trailing" constant="8" placeholder="YES" id="7x6-Ug-zpu"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="L41-ts-atR" secondAttribute="bottom" constant="8" placeholder="YES" id="JXU-HD-nj5"/>
-                            <constraint firstItem="L41-ts-atR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" placeholder="YES" id="sh2-st-BQD"/>
+                            <constraint firstItem="L41-ts-atR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="34P-4d-aCt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="L41-ts-atR" secondAttribute="trailing" constant="8" id="D42-Ry-lyz"/>
+                            <constraint firstItem="L41-ts-atR" firstAttribute="top" secondItem="bHO-Xu-xp6" secondAttribute="bottom" constant="-2" id="DbL-k1-yz9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bHO-Xu-xp6" secondAttribute="trailing" constant="8" id="Nv8-Vs-rHF"/>
+                            <constraint firstItem="bHO-Xu-xp6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="WQK-ZN-YHW"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="L41-ts-atR" secondAttribute="bottom" constant="8" id="bGk-H6-btC"/>
+                            <constraint firstItem="bHO-Xu-xp6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="sg0-7r-qh3"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>

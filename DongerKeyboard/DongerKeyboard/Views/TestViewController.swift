@@ -91,20 +91,20 @@ class TestViewController: UIViewController {
     func setupConstraints() {
 
         // Set up the collectionView with equal constraints to the superview margins.
-        constrain(collectionView, view) { collectionView, superview in
+        /*constrain(collectionView, view) { collectionView, superview in
 
             collectionView.top == superview.topMargin + 8
             collectionView.bottom == superview.bottomMargin - 8
             collectionView.left == superview.leftMargin
             collectionView.right == superview.rightMargin
-        }
+        }*/
     }
 
     func setupCollectionView() {
         self.collectionView.registerNib(UINib(nibName: Constants.Nibs.TestCollectionViewCell, bundle: NSBundle.mainBundle()),
                                         forCellWithReuseIdentifier: Constants.Identifiers.DongersCell)
         let refreshControl = UIRefreshControl()
-        let disposable = refreshControl.addAction(viewModel.refresh, forControlEvents: .ValueChanged)
+        let disposable = refreshControl.racx_addAction(viewModel.refresh, forControlEvents: .ValueChanged)
         disposables.append(disposable)
 
         self.collectionView.addSubview(refreshControl)

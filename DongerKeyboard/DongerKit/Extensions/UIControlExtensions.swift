@@ -11,7 +11,7 @@ import ReactiveCocoa
 import Result
 
 public extension UIControl {
-    func addAction<Input, Output, Error>(action: Action<Input, Output, Error>, forControlEvents controlEvents: UIControlEvents) -> Disposable {
+    func racx_addAction<Input, Output, Error>(action: Action<Input, Output, Error>, forControlEvents controlEvents: UIControlEvents) -> Disposable {
 
         let cocoaAction = action.unsafeCocoaAction
         self.addTarget(cocoaAction, action: cocoaAction.dynamicType.selector, forControlEvents: controlEvents)
